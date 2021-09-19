@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{%static 'SDAH_static/css/style.css' %}">
+    <link rel="stylesheet" href="{%static 'SDAH_static/css/utility.css' %}">
+</head>
+<body>
+<!--<h1>HI</h1>-->
+{% load static %}
+<!--<a href="{%static 'SDAH_static/SDAH.txt' %}">Click me</a>-->
+<!-- Navigation Bar -->
+    <nav>
+        <!-- Navigation one -->
+        <div id="nav-1" class="m-auto">
+            <div class="nav-mb-bur_srhbtn">
+                <div id="burger" class="burger">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+                <div class="srhbtn-resp-mb" onclick="toggle_srh()">
+                    <i>
+                        <svg focusable="false" width="18px" height="18px" viewBox="0 0 24 24">
+                            <path
+                                d="M19.023 16.977a35.13 35.13 0 0 1-1.367-1.384c-.372-.378-.596-.653-.596-.653l-2.8-1.337A6.962 6.962 0 0 0 16 9c0-3.859-3.14-7-7-7S2 5.141 2 9s3.14 7 7 7c1.763 0 3.37-.66 4.603-1.739l1.337 2.8s.275.224.653.596c.387.363.896.854 1.384 1.367l1.358 1.392l.604.646l2.121-2.121l-.646-.604c-.379-.372-.885-.866-1.391-1.36zM9 14c-2.757 0-5-2.243-5-5s2.243-5 5-5s5 2.243 5 5s-2.243 5-5 5z"
+                                fill="#fff" />
+                        </svg>
+                    </i>
+                </div>
+            </div>
+            <div class="nav-row">
+                <div class="nav-col1">
+                    <a href="/index.html">
+                        <div class="logo">
+                            <img src="{%static 'SDAH_static/img/logo white.png' %}" alt="logo">
+                        </div>
+                    </a>
+                </div>
+                <div class="nav-col2">
+                    <div class="search">
+                        <input type="search" placeholder="Search for products..">
+                        <button class="srh-btn btn icon-search-label">
+                            <div class="search-label cvRV">
+                                <div class="search-icon-container">
+                                    <i class="search-icon">
+                                        <svg focusable="false" width="21px" height="21px" viewBox="0 0 24 24">
+                                            <path
+                                                d="M19.023 16.977a35.13 35.13 0 0 1-1.367-1.384c-.372-.378-.596-.653-.596-.653l-2.8-1.337A6.962 6.962 0 0 0 16 9c0-3.859-3.14-7-7-7S2 5.141 2 9s3.14 7 7 7c1.763 0 3.37-.66 4.603-1.739l1.337 2.8s.275.224.653.596c.387.363.896.854 1.384 1.367l1.358 1.392l.604.646l2.121-2.121l-.646-.604c-.379-.372-.885-.866-1.391-1.36zM9 14c-2.757 0-5-2.243-5-5s2.243-5 5-5s5 2.243 5 5s-2.243 5-5 5z"
+                                                fill="#fff" />
+                                        </svg>
+                                    </i>
+                                </div>
+                                <div class="icon-label">Search</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div class="nav-col3">
+                    <div class="ca-gin ">
+                        <div class="icon-cart-label">
+                            <a href="cart.html">
+                                <div class="cart-label cvRV">
+                                    <div class="cart-icon-container cursor">
+                                        <i class="cart-icon">
+                                            <svg aria-hidden="true" focusable="" width="22px" height="22px"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M17 18a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2c0-1.11.89-2 2-2M1 2h3.27l.94 2H20a1 1 0 0 1 1 1c0 .17-.05.34-.12.5l-3.58 6.47c-.34.61-1 1.03-1.75 1.03H8.1l-.9 1.63l-.03.12a.25.25 0 0 0 .25.25H19v2H7a2 2 0 0 1-2-2c0-.35.09-.68.24-.96l1.36-2.45L3 4H1V2m6 16a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2c0-1.11.89-2 2-2m9-7l2.78-5H6.14l2.36 5H16z"
+                                                    fill="#fff" />
+                                            </svg>
+                                        </i>
+                                    </div>
+                                    <div class="icon-label">Cart <span class="cart-number">0</span></div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="icon-login-label">
+                            <a href="/login.html">
+                                <div class="login-label cvRV">
+                                    <div class="login-icon-container cursor">
+                                        <i class="login-icon">
+                                            <svg aria-hidden="true" focusable="" width="19px" height="19px"
+                                                viewBox="0 0 448 512">
+                                                <path
+                                                    d="M313.6 304c-28.7 0-42.5 16-89.6 16c-47.1 0-60.8-16-89.6-16C60.2 304 0 364.2 0 438.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-25.6c0-74.2-60.2-134.4-134.4-134.4zM400 464H48v-25.6c0-47.6 38.8-86.4 86.4-86.4c14.6 0 38.3 16 89.6 16c51.7 0 74.9-16 89.6-16c47.6 0 86.4 38.8 86.4 86.4V464zM224 288c79.5 0 144-64.5 144-144S303.5 0 224 0S80 64.5 80 144s64.5 144 144 144zm0-240c52.9 0 96 43.1 96 96s-43.1 96-96 96s-96-43.1-96-96s43.1-96 96-96z"
+                                                    fill="#fff" />
+                                            </svg>
+                                        </i>
+                                    </div>
+                                    <div class="icon-label display">Login</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="search" id="search-mb" style="display: none;">
+            <input type="search" placeholder="Search for products..">
+            <button class="srh-btn btn icon-search-label">
+                <div class="search-label">
+                    <div class="search-icon-container">
+                        <i class="search-icon">
+                            <svg focusable="false" width="17px" height="17px" viewBox="0 0 24 24">
+                                <path
+                                    d="M19.023 16.977a35.13 35.13 0 0 1-1.367-1.384c-.372-.378-.596-.653-.596-.653l-2.8-1.337A6.962 6.962 0 0 0 16 9c0-3.859-3.14-7-7-7S2 5.141 2 9s3.14 7 7 7c1.763 0 3.37-.66 4.603-1.739l1.337 2.8s.275.224.653.596c.387.363.896.854 1.384 1.367l1.358 1.392l.604.646l2.121-2.121l-.646-.604c-.379-.372-.885-.866-1.391-1.36zM9 14c-2.757 0-5-2.243-5-5s2.243-5 5-5s5 2.243 5 5s-2.243 5-5 5z"
+                                    fill="#000000" />
+                            </svg>
+                        </i>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <!-- Navigation two -->
+        <div id="nav-2" class="side-menu-mb m-auto">
+            <ul class="main-menu">
+                <li class="category-home">
+                    <a href="/">Home</a>
+                </li>
+                <li class="category" id="dropmenuone">
+                    <div class="dropdown" id="dropdownone">
+                        <span class="drop-icons-mb">
+                            <svg width="0.8em" height="0.8em" viewBox="0 0 13 18.871"><path d="M11.913 5.877H8.976L8.82 4.256v-.019a.88.88 0 00-.846-.892h-.085V1.931h.2a.605.605 0 00.6-.6V.606a.605.605 0 00-.6-.6h-5.32a.605.605 0 00-.6.6.363.363 0 00.011.088l.15.6a.845.845 0 00.821.641h1.964v1.411h-.086a.88.88 0 00-.846.892l-.158 1.641H1.089A1.089 1.089 0 00.001 6.967v11.057a.847.847 0 00.846.846h11.307a.847.847 0 00.846-.846V6.965a1.089 1.089 0 00-1.087-1.088zM3.147 1.208a.121.121 0 01-.117-.092l-.1-.392h5.035v.483zm4.019.725v1.411h-1.33V1.931zm-2.26 2.358v-.035c0-.106.064-.186.121-.186H7.97c.057 0 .121.079.121.186v.035l.153 1.587h-3.49zm7.369 13.734a.121.121 0 01-.121.121H.846a.121.121 0 01-.121-.121V6.965a.363.363 0 01.363-.363h10.824a.363.363 0 01.363.363v11.059zM9.857 8.869H3.143a.605.605 0 00-.6.6v5.8a.6.6 0 00.6.6h6.714a.6.6 0 00.6-.6v-5.8a.6.6 0 00-.6-.6zm-.121 6.285H3.264v-5.56h6.472z" fill="#000" class="path-selector"></path></svg>
+                        </span>
+                        <span>Body</span><span class="side-menu-arrow1">&#155;</span>
+                        <div class="dropdown-content" id="dropdown-content-one">
+                            <a href="">Body Wash</a>
+                            <hr class="line">
+                            <a href="">Body Lotion</a>
+                            <hr>
+                            <a href="#">Body</a>
+                            <hr>
+                            <a href="">Body Wash</a>
+                            <hr class="line">
+                            <a href="">Body Lotion</a>
+                            <hr>
+                            <a href="#">Body</a>
+                            <hr>
+                            <a href="">Body Wash</a>
+                            <hr class="line">
+                            <a href="">Body Lotion</a>
+                            <hr>
+                            <a href="#">Body</a>
+                        </div>
+
+                    </div>
+                </li>
+                <li class="category" id="dropmenutwo">
+                    <div class="dropdown" id="dropdowntwo">
+                        <span class="drop-icons-mb">
+                            <svg width="1.1em" height="1.1em" viewBox="0 0 13 22.943"><defs><style>.beauty__icon{fill:#000}</style></defs><path class="beauty__icon path-selector" d="M11.088 17.591H8.029v-1.01a4.979 4.979 0 003.334-3.7 6.041 6.041 0 001.254-3.7V7.65a6.118 6.118 0 00-3.51-5.525A2.593 2.593 0 008.392.791a2.663 2.663 0 00-4.5 1.334A6.118 6.118 0 00.382 7.65v1.529a6.041 6.041 0 001.254 3.7 4.979 4.979 0 003.334 3.7v1.009H1.912A1.912 1.912 0 000 19.506v3.059a.382.382 0 00.382.382h12.236a.382.382 0 00.382-.386v-3.055a1.912 1.912 0 00-1.912-1.915zm.765-9.941v1.529a5.339 5.339 0 01-.382 1.981v-.834a4.971 4.971 0 00-.4-1.954 6.18 6.18 0 00-4.288-5.414 5.307 5.307 0 01.891-.528 5.358 5.358 0 014.179 5.219zm-1.969-.952a4.907 4.907 0 00-5.036-1.052 5.3 5.3 0 011.235-2.08 5.4 5.4 0 013.8 3.131zM5.15 1.325a1.912 1.912 0 012.7 0 1.948 1.948 0 01.325.444 5.969 5.969 0 00-3.357 0 1.875 1.875 0 01.329-.447zm-3.621 9v.834a5.339 5.339 0 01-.382-1.981V7.65a5.353 5.353 0 015.227-5.344A6.076 6.076 0 003.946 6.07a4.959 4.959 0 00-2.417 4.256zm.765 1.529v-1.528a4.206 4.206 0 018.412 0v1.529a4.206 4.206 0 11-8.412 0zm7.647 10.324H3.059V20.65h6.882zm2.294 0h-1.529v-1.911a.382.382 0 00-.382-.382H2.676a.382.382 0 00-.382.382v1.912H.765v-2.673a1.151 1.151 0 011.147-1.147h3.441a.382.382 0 00.382-.382v-1.216a5.032 5.032 0 00.765.065 5.032 5.032 0 00.765-.065v1.212a.382.382 0 00.382.382h3.441a1.15 1.15 0 011.147 1.151z"></path><path class="beauty__icon path-selector" d="M5.735 10.326a1.147 1.147 0 10-1.147 1.147 1.147 1.147 0 001.147-1.147zm-1.529 0a.382.382 0 11.382.382.382.382 0 01-.382-.382zM8.412 11.473a1.147 1.147 0 10-1.147-1.147 1.147 1.147 0 001.147 1.147zm0-1.529a.382.382 0 11-.382.382.382.382 0 01.382-.382zM8.412 13.385a.382.382 0 00-.383-.382H4.97a.382.382 0 00-.382.382 1.912 1.912 0 103.824 0zm-2.993.382h2.163a1.147 1.147 0 01-2.163 0z"></path></svg>
+                        </span>
+                        <span>Beauty</span><span class="side-menu-arrow2">&#155;</span>
+                        <div class="dropdown-content" id="dropdown-content-two">
+                            <a href="">Body Wash</a>
+                            <hr>
+                            <a href="">Body Lotion</a>
+                            <hr>
+                            <a href="#">Body</a>
+                            <hr>
+                            <a href="">Body Wash</a>
+                            <hr>
+                            <a href="">Body Lotion</a>
+                            <hr>
+                            <a href="#">Body</a>
+                            <hr>
+                            <a href="">Body Wash</a>
+                            <hr>
+                            <a href="">Body Lotion</a>
+                            <hr>
+                            <a href="#">Body</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="category" id="dropmenuthree">
+                    <div class="dropdown" id="dropdownthree">
+                        <span class="drop-icons-mb">
+                            <svg  width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2.9px" stroke-linecap="round" stroke-linejoin="round"><path d="M19.193 21.544l2.319 18.552a3.473 3.473 0 0 1-6.892.862l-2.374-18.99"/><path d="M13 4a9 9 0 0 0 0 18c1.578 0 3.74-.175 6.193-.456l12.403-2.022L44 17.5v-9L28.5 6.25L13 4z"/><path d="M37 8.2v9.6"/><path d="M44 17.5l-12.404 2.022"/><path d="M44 8.5L28.5 6.25"/><path d="M16 13a3 3 0 1 1-6 0a3 3 0 0 1 6 0z"/></g></svg>
+                        </span>
+                        <span>Hairs</span><span class="side-menu-arrow3">&#155;</span>
+                        <div class="dropdown-content" id="dropdown-content-three">
+                            <a href="">Body Wash</a>
+                            <hr>
+                            <a href="">Body Lotion</a>
+                            <hr>
+                            <a href="#">Body</a>
+                            <hr>
+                            <a href="">Body Wash</a>
+                            <hr>
+                            <a href="">Body Lotion</a>
+                            <hr>
+                            <a href="#">Body</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="category" id="dropmenufour">
+                    <div class="dropdown" id="dropdownfour">
+                        <span class="drop-icons-mb">
+                            <svg width="0.9em" height="0.9em" viewBox="0 0 17.204 13.123"><defs><style>.face_cream{fill:none;stroke:#000;}</style></defs><path class="face_cream path-selector" d="M6.119 6.509c-.171.185-1.675 1.839-1.675 2.805a1.883 1.883 0 003.766 0c0-.967-1.5-2.62-1.675-2.805a.293.293 0 00-.416 0zm.208 4.122a1.317 1.317 0 01-1.319-1.312 5.31 5.31 0 011.315-2.187 5.314 5.314 0 011.319 2.187 1.317 1.317 0 01-1.315 1.312z"></path><path class="face_cream path-selector" d="M16.984 10.497l-2.323-5.78a1.6 1.6 0 00-2.079-.887l-1.054.424a.284.284 0 00-.157.369l.019.047a1.657 1.657 0 00-.361-.091v-1.2a.284.284 0 00-.283-.283h-.392a1.429 1.429 0 00-1.077-.729l-.146-.018A2.474 2.474 0 006.543.102a.28.28 0 00-.222.068.284.284 0 00-.1.208c-.014.826-.945 1.325-1.2 1.447l-.61-.077a2.208 2.208 0 00-2.29 1.348h-.248a.283.283 0 00-.283.283v1.2A1.682 1.682 0 00.1 6.244v5.092a1.688 1.688 0 001.686 1.686h9.008a1.688 1.688 0 001.687-1.686V7.38l2.2 5.463a.285.285 0 00.152.155.292.292 0 00.111.023.283.283 0 00.106-.021l1.044-.424a1.6 1.6 0 00.887-2.079zm-6.523-5.939h-8.3v-.9h8.3v.9zM6.761.692a1.867 1.867 0 011.791 1.582l-2.641-.335A2.164 2.164 0 006.758.692zM4.337 2.311l.7.089h.017l4.148.527a1.15 1.15 0 01.433.167H2.767a1.548 1.548 0 011.57-.783zm7.574 9.025a1.12 1.12 0 01-1.117 1.119H1.786a1.12 1.12 0 01-1.118-1.119V6.244a1.12 1.12 0 011.118-1.119h9.008a1.12 1.12 0 011.119 1.119zm4.54.161a1.026 1.026 0 01-.564.552l-.793.319-3.091-7.691.791-.318a1.031 1.031 0 011.341.572l2.323 5.777a1.023 1.023 0 01-.008.789z"></path></svg>
+                        </span>
+                        <span>Body</span><span class="side-menu-arrow4">&#155;</span>
+                        <div class="dropdown-content" id="dropdown-content-four">
+                            <a href="">Body Wash</a>
+                            <hr>
+                            <a href="">Body Lotion</a>
+                            <hr>
+                            <a href="#">Body</a>
+                            <hr>
+                            <a href="">Body Wash</a>
+                            <hr>
+                            <a href="">Body Lotion</a>
+                            <hr>
+                            <a href="#">Body</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="outclick"></div>
+    </nav>
+<!-- Navigation end -->
+<!-- Slider Container -->
+    <div class="slider">
+        <!-- <-- fade and slides -->
+        <div class="myslide fade">
+            <img src="{%static 'SDAH_static/img/slide1.jpg' %}" style="width: 100%; height: 100%;">
+        </div>
+        <div class="myslide fade">
+            <img src="{%static 'SDAH_static/img/slide-2.jpg' %}" style="width: 100%; height: 100%;">
+        </div>
+        <div class="myslide fade">
+            <img src="{%static 'SDAH_static/img/slide-3.jpg' %}" style="width: 100%; height: 100%;">
+        </div>
+        <div class="myslide fade">
+            <img src="{%static 'SDAH_static/img/slide-4.jpg' %}" style="width: 100%; height: 100%;">
+        </div>
+        <div class="myslide fade">
+            <img src="{%static 'SDAH_static/img/slide-5.jpg' %}" style="width: 100%; height: 100%;">
+        </div>
+
+        <!-- onclick js -->
+        <a class="prev" onclick="plusSlides(-1)">&#139;</a>
+        <a class="next" onclick="plusSlides(1)">&#155;</a>
+    </div>
+<!-- Slider Container end -->
+<!-- javascript link -->
+    <script src="{%static 'SDAH_static/js/index.js' %}"></script>
+    <script src="{%static 'SDAH_static/js/login.js' %}"></script>
+    <script src="{%static 'SDAH_static/js/product-slider.js' %}"></script>
+
+    
+</body>
+</html>

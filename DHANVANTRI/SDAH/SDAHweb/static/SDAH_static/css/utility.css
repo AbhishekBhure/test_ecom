@@ -1,0 +1,245 @@
+:root{
+    /* --main-bg-color: #ffac12; */
+    --font1: 'Bebas Neue', cursive;
+    /* --font2: 'Source Sans Pro', sans-serif; */
+    --font2: 'Work Sans', sans-serif;
+}
+
+.display{
+    display: flex;
+}
+
+.cursor{
+    cursor: pointer;
+}
+
+.font1{
+    font-family: var(--font1);
+}
+
+.font2{
+    font-family: var(--font2);
+}
+
+.m-auto{
+    margin: auto;
+}
+
+.btn{
+    padding: 7px 16px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    background-color: #ff9933;
+    width: 7rem;
+    cursor: pointer;
+}
+
+.contact-btn{
+    text-align: center;
+    margin: 13px auto;
+    padding: 2px 0px;
+}
+
+.cnt-btn{
+    font-size: 0.89em;
+    letter-spacing: 0.01em;
+    background-color: #fff;
+    font-family: var(--font2);
+}
+.cnt-btn:hover{
+    background-color: #ff9933;
+    transition: all 0.5s ease;
+    color: white;
+}
+
+
+.btn:hover{
+    cursor: pointer;
+}
+
+[type = "search"]{
+    appearance: textfield;
+}
+
+.srh-btn{
+    border-radius: 0px 4px 4px 0px;
+    padding: 0px 6px;
+}
+
+
+.dropdown-content hr{
+    font-weight: normal;
+    opacity: 0.1;
+}
+
+.icon{
+    font-size: 4rem;
+}
+
+.cvRV{
+    display: grid;
+    -moz-box-align: center;
+    align-items: center;
+    grid-template-columns: auto auto;
+    cursor: pointer;
+}
+
+svg{
+    vertical-align: middle;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+.icons{
+    padding: 0px 10px;
+}
+
+.WhInfa a{
+    text-decoration: none;
+}
+.my-2{
+    position: relative;
+    font-size: 2rem;
+    text-align: center;
+    user-select: none;
+}
+
+.third .my-2::before{
+    left: 495px;
+    transform: translateY(-50%);
+}
+
+.third .my-2::after{
+    right: 495px;
+    transform: translateY(-50%);
+}
+
+.third .my-2::after, .third .my-2::before{
+    content: '';
+    position: absolute;
+    background-color: #000;
+    top: 50%;
+    width: 120px;
+    height: 2px;
+}
+
+.add-btn{
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    /* background-color:#141414; */
+    background-color: #96CC39;
+    text-align: center;
+    cursor: pointer;
+    width: 70%;
+    font-size: 18px;
+    margin: auto;
+    border-radius: 5px;
+    font-family: var(--font2);
+  }
+.cart-number{
+    position: absolute;
+    left: 65px;
+    bottom: 26px;
+    font-size: 0.6em;
+    background: #fff;
+    color: #141414;
+    border-radius: 50%;
+    display: grid;
+    height: 15px;
+    width: 15px;
+    place-items: center;
+    text-align: center;
+    line-height: 1.2em;
+}
+
+.nav-mb-bur_srhbtn{
+    display: none;
+}
+
+.category .side-menu-arrow1, .category .side-menu-arrow2, .category .side-menu-arrow3, .category .side-menu-arrow4{
+    display: none;
+}
+
+.change .side-menu-arrow1{
+    transform: rotate(90deg);
+    transition: transform .2s ease;
+}
+.change .side-menu-arrow2{
+    transform: rotate(90deg);
+    transition: transform .2s ease;
+}
+.change .side-menu-arrow3{
+    transform: rotate(90deg);
+    transition: transform .2s ease;
+}
+.change .side-menu-arrow4{
+    transform: rotate(90deg);
+    transition: transform .2s ease;
+}
+
+/* footer drop */
+.foot-arrow1, .foot-arrow2, .foot-arrow3{
+    position: absolute;
+    top: -6px;
+    right: 8px;
+    font-size: 19px;
+    font-weight: 100;
+    user-select: none;
+}
+
+
+
+.change .foot-arrow1{
+    transform: rotate(90deg);
+    transition: transform .2s ease-in-out;
+}
+.change .foot-arrow2{
+    transform: rotate(90deg);
+    transition: transform .2s ease;
+}
+.change .foot-arrow3{
+    transform: rotate(90deg);
+    transition: transform .2s ease;
+}
+
+/* #outclick.show{
+    width: 100%;
+    height: 100%;
+} */
+
+.drop-icons-mb{
+    display: none;
+}
+
+#topscrollbtn{
+    border-radius: 50%;
+    position: fixed;
+    right:10px ;
+    bottom: 10px;
+    border: none;
+    z-index: 2;
+    cursor: pointer;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .8s ease;
+    /* display: none; */
+}
+#topscrollbtn.active{
+    bottom: 10px;
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.hidden{
+    overflow: hidden;
+}
+
+
+
+
+

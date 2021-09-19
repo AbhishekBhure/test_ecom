@@ -1,0 +1,293 @@
+{% extends 'SDAHweb/base.html' %}
+{% load static %}
+{% block title %} Home {% endblock %}
+
+{% block body %}
+
+
+<!-- Slider Container -->
+<div class="slider">
+    <!-- <-- fade and slides -->
+    <div class="myslide fade">
+        <img src="{%static 'SDAH_static/img/slide1.jpg' %}" style="width: 100%; height: 100%;">
+    </div>
+    <div class="myslide fade">
+        <img src="{%static 'SDAH_static/img/slide-2.jpg' %}" style="width: 100%; height: 100%;">
+    </div>
+    <div class="myslide fade">
+        <img src="{%static 'SDAH_static/img/slide-3.jpg' %}" style="width: 100%; height: 100%;">
+    </div>
+    <div class="myslide fade">
+        <img src="{%static 'SDAH_static/img/slide-4.jpg' %}" style="width: 100%; height: 100%;">
+    </div>
+    <div class="myslide fade">
+        <img src="{%static 'SDAH_static/img/slide-5.jpg' %}" style="width: 100%; height: 100%;">
+    </div>
+
+    <!-- onclick js -->
+    <a class="prev" onclick="plusSlides(-1)">&#139;</a>
+    <a class="next" onclick="plusSlides(1)">&#155;</a>
+</div>
+<!-- Slider Container end -->
+
+<!-- Product-Slider-01 -->
+<div class="product-carousel">
+{% for product, range, nSlides in allProds %}
+    <div class="product-slider">
+        <div class="carousel-title">
+            <h1 class="carousel-hd">
+                <span>{{ product.0.category }}</span>
+            </h1>
+        </div>
+        <span class="product-carousel-btn">&#139;</span>
+        <span onclick="myFunction" id="bts" class="product-carousel-btn">&#155;</span>
+        <span onclick="location.href = '/product.html';" id="link-btn" class="product-carousel-btn">&#155;</span>
+        <span id="more">More</span>
+        <div class="cards resp-cards">
+           
+            <!-- <div class="card-item">
+                <img src='/media/{{product.0.image}}' alt>
+                <div class=" lines">
+                    <hr>
+                    <p class="text-center my-1">{{ product.0.product_name }}</p>
+                    <p class="text-center my-1">{{ product.0.price }}</p>
+                    <p><button class="add-btn">Add to cart</button></p>
+                </div>
+            </div> -->
+            {% for i in product %}
+            <div class="card-item">
+                <img src='/media/{{i.image}}' alt>
+                <div class=" lines">
+                    <hr>
+                    <p class="text-center my-1">{{i.product_name}}</p>
+                    <p class="text-center my-1">{{i.price}}</p>
+                    <p><button id="pr{{product.0.id}}" class="add-btn cart">Add to cart</button></p>
+                </div>
+            </div>
+            {% endfor %}
+            <!-- <div class="card-item">
+                <img src="/img/baidyanathpic1.jpg" alt>
+                <div class=" lines">
+                    <hr>
+                    <p class="text-center my-1">Ceat bat Hitman bat 03</p>
+                    <p class="text-center my-1">20% off</p>
+                    <p><button class="add-btn">Add to cart</button></p>
+                </div>
+            </div>
+            <div class="card-item">
+                <img src="/img/baidyanathpic1.jpg" alt>
+                <div class=" lines">
+                    <hr>
+                    <p class="text-center my-1">Ceat bat Hitman bat 04</p>
+                    <p class="text-center my-1">20% off</p>
+                    <p><button class="add-btn">Add to cart</button></p>
+                </div>
+            </div>
+            <div class="card-item">
+                <img src="/img/baidyanathpic1.jpg" alt>
+                <div class=" lines">
+                    <hr>
+                    <p class="text-center my-1">Ceat bat Hitman bat 05</p>
+                    <p class="text-center my-1">20% off</p>
+                    <p><button class="add-btn">Add to cart</button></p>
+                </div>
+            </div>
+            <div class="card-item">
+                <img src="/img/baidyanathpic1.jpg" alt>
+                <div class=" lines">
+                    <hr>
+                    <p class="text-center my-1">Ceat bat Hitman bat 06</p>
+                    <p class="text-center my-1">20% off</p>
+                    <p><button class="add-btn">Add to cart</button></p>
+                </div>
+            </div> -->
+            
+        </div>
+        
+    </div>
+    {% endfor %}
+</div>
+
+
+
+<!-- Product-Slider-01 END!! -->
+
+<!-- Product-Slider-02 -->
+<!-- <div class="product-carousel">
+    <div class="product-slider">
+        <div class="carousel-title">
+            <h1 class="carousel-hd">
+                <span>{{ product.1.category }}</span>
+            </h1>
+        </div>
+        <span class="product-carousel-btn-two">&#139;</span>
+        <span onclick="myFunction" id="bts-two" class="product-carousel-btn-two">&#155;</span>
+        <span onclick="location.href = 'products.html';" id="link-btn-two"
+            class="product-carousel-btn-two">&#155;</span>
+        <span id="more">More</span>
+        <div class="cards resp-cards">
+            {% for i in product %}
+            <div class="card-item-two">
+                <img src='/media/{{product.0.image}}' alt>
+                <div class=" lines">
+                    <hr>
+                    <p class="text-center my-1">{{ i.product_name }}</p>
+                    <p class="text-center my-1">{{ i.price }}</p>
+                    <p><button class="add-btn">Add to cart</button></p>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="card-item-two">
+                <img src="/img/baidyanathpic1.jpg" alt>
+                <div class=" lines">
+                    <hr>
+                    <p class="text-center my-1">{{j.product_name}}</p>
+                    <p class="text-center my-1">{{j.price}}</p>
+                    <p><button class="add-btn">Add to cart</button></p>
+                </div>
+            </div>
+            
+            <div class="card-item-two">
+                <img src="/img/baidyanathpic1.jpg" alt>
+                <div class=" lines">
+                    <hr>
+                    <p class="text-center my-1">Ceat bat Hitman bat 03</p>
+                    <p class="text-center my-1">20% off</p>
+                    <p><button class="add-btn">Add to cart</button></p>
+                </div>
+            </div>
+            <div class="card-item-two">
+                <img src="/img/baidyanathpic1.jpg" alt>
+                <div class=" lines">
+                    <hr>
+                    <p class="text-center my-1">Ceat bat Hitman bat 04</p>
+                    <p class="text-center my-1">20% off</p>
+                    <p><button class="add-btn">Add to cart</button></p>
+                </div>
+            </div>
+            <div class="card-item-two">
+                <img src="/img/baidyanathpic1.jpg" alt>
+                <div class=" lines">
+                    <hr>
+                    <p class="text-center my-1">Ceat bat Hitman bat 05</p>
+                    <p class="text-center my-1">20% off</p>
+                    <p><button class="add-btn">Add to cart</button></p>
+                </div>
+            </div>
+            <div class="card-item-two">
+                <img src="/img/baidyanathpic1.jpg" alt>
+                <div class=" lines">
+                    <hr>
+                    <p class="text-center my-1">Ceat bat Hitman bat 06</p>
+                    <p class="text-center my-1">20% off</p>
+                    <p><button class="add-btn">Add to cart</button></p>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>  -->
+<!-- Product-Slider-02 END!! -->
+
+<!-- Product-Slider-03 -->
+<!-- <div class="product-carousel">
+    <div class="product-slider">
+        <div class="carousel-title">
+            <h1 class="carousel-hd">
+                <span>Body</span>
+            </h1>
+        </div>
+        <span class="product-carousel-btn-three">&#139;</span>
+        <span onclick="myFunction" id="bts-three" class="product-carousel-btn-three">&#155;</span>
+        <span onclick="location.href = 'products.html';" id="link-btn-three"
+            class="product-carousel-btn-three">&#155;</span>
+        <span id="more">More</span>
+        <div class="cards resp-cards">
+            <div class="card-item-three">
+                <img src="/img/baidyanathpic1.jpg" alt>
+                <div class=" lines">
+                    <hr>
+                    <p class="text-center my-1">Ceat bat Hitman bat 01</p>
+                    <p class="text-center my-1">20% off</p>
+                    <p><button class="add-btn">Add to cart</button></p>
+                </div>
+            </div>
+
+            <div class="card-item-three">
+                <img src="/img/baidyanathpic1.jpg" alt>
+                <div class=" lines">
+                    <hr>
+                    <p class="text-center my-1">Ceat bat Hitman bat 02</p>
+                    <p class="text-center my-1">20% off</p>
+                    <p><button class="add-btn">Add to cart</button></p>
+                </div>
+            </div>
+            <div class="card-item-three">
+                <img src="/img/baidyanathpic1.jpg" alt>
+                <div class=" lines">
+                    <hr>
+                    <p class="text-center my-1">Ceat bat Hitman bat 03</p>
+                    <p class="text-center my-1">20% off</p>
+                    <p><button class="add-btn">Add to cart</button></p>
+                </div>
+            </div>
+            <div class="card-item-three">
+                <img src="/img/baidyanathpic1.jpg" alt>
+                <div class=" lines">
+                    <hr>
+                    <p class="text-center my-1">Ceat bat Hitman bat 04</p>
+                    <p class="text-center my-1">20% off</p>
+                    <p><button class="add-btn">Add to cart</button></p>
+                </div>
+            </div>
+            <div class="card-item-three">
+                <img src="/img/baidyanathpic1.jpg" alt>
+                <div class=" lines">
+                    <hr>
+                    <p class="text-center my-1">Ceat bat Hitman bat 05</p>
+                    <p class="text-center my-1">20% off</p>
+                    <p><button class="add-btn">Add to cart</button></p>
+                </div>
+            </div>
+            <div class="card-item-three">
+                <img src="/img/baidyanathpic1.jpg" alt>
+                <div class=" lines">
+                    <hr>
+                    <p class="text-center my-1">Ceat bat Hitman bat 06</p>
+                    <p class="text-center my-1">20% off</p>
+                    <p><button class="add-btn">Add to cart</button></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+<!-- Product-Slider-03 END!! -->
+
+{% endblock %}
+
+{% block js %}
+<script>
+console.log("Working")
+if(localStorage.getItem('cart') == null)
+{
+    var cart = {};
+}
+else{
+    cart = JSON.parse(localStorage.getItem('cart'));
+}
+
+$('.cart').click(function(){
+    console.log('clicked');
+    var idStr = this.id.toString();
+    console.log(idStr);
+    if(cart[idStr]!= undefined){
+        cart[idStr] = cart[idStr] + 1;
+    }
+    else{
+        cart[idStr] = 1
+    }
+    console.log(cart);
+    localStorage.setItem('cart', JSON.stringify(cart))
+});
+</script>
+
+{% endblock %}
